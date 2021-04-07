@@ -46,7 +46,7 @@ if Code.ensure_loaded?(Ecto.Type) do
 
     def blank?(_), do: false
 
-    def equal?(_, _), do: false
+    def equal?(:geometry, _, _), do: false
 
     def load(%struct{} = geom) when struct in @geometries, do: {:ok, geom}
     def load(_), do: :error
